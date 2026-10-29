@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>ToDo List</h1>
+
+    <input type="text" id="input">
+    <button onclick="displayTask()">Add</button>
+
+    <ul id="ul"></ul>
+
+    <script>
+        function displayTask(){
+            
+            let input = document.getElementById("input");
+            let text = input.value;
+
+            let li = document.createElement("li");
+
+            li.textContent = text;
+
+            document.getElementById("ul").appendChild(li);
+
+            // Clear input
+            input.value = "";
+
+            // Remove task when clicked
+            li.onclick = function(){
+                li.remove();
+            }
+        }
+    </script>
+
+</body>
+</html>
